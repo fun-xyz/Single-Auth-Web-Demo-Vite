@@ -1,7 +1,6 @@
 "use client"; // All React hooks need to be used in a client context
 import {
   FunContextProvider,
-  configureNewFunStore,
   Goerli,
   useMetamaskAuth,
   useFunWallet,
@@ -22,10 +21,6 @@ const DEFAULT_FUN_WALLET_CONFIG = {
       "0xCB5D0b4569A39C217c243a436AC3feEe5dFeb9Ad" as `0x${string}`, //Gasless payments on Goerli. Please switch to another gas sponsor method, or prefund your wallet on mainnet!
   },
 };
-
-configureNewFunStore({
-  config: DEFAULT_FUN_WALLET_CONFIG,
-});
 
 function App() {
   const [receiptTxId, setReceiptTxId] = useState("");
@@ -177,7 +172,7 @@ function App() {
 
 export default function AppWrapper() {
   return (
-    <FunContextProvider appId={"clnatprpv00sfmi0fv3qc185b"}>
+    <FunContextProvider appId={"clnatprpv00sfmi0fv3qc185b"} options={DEFAULT_FUN_WALLET_CONFIG}>
       <App />
     </FunContextProvider>
   );
