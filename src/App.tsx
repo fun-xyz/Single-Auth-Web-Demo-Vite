@@ -172,7 +172,7 @@ function App() {
 
 export default function AppWrapper() {
   return (
-    <FunContextProvider appId={"clnatprpv00sfmi0fv3qc185b"} options={DEFAULT_FUN_WALLET_CONFIG}>
+    <FunContextProvider privyAppId={"clnatprpv00sfmi0fv3qc185b"} options={DEFAULT_FUN_WALLET_CONFIG}>
       <App />
     </FunContextProvider>
   );
